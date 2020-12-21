@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash --posix
 
 HOSTNAME="echo.websocket.org"
 PORT="443"
@@ -22,4 +22,4 @@ on_connect() {
 HANDLE="$(ws_create)"
 
 trap 'ws_close' 2
-ws_connect "$HANDLE" "$HOSTNAME" "$PORT" "$ENDPOINT" "$ON_MESSAGE" "$ON_CONNECT" 2>/dev/null
+ws_connect "$HANDLE" "$HOSTNAME" "$PORT" "$ENDPOINT" "$ON_MESSAGE" "$ON_CONNECT"

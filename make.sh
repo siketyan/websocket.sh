@@ -3,7 +3,7 @@
 SRC="./src"
 ENTRYPOINT="$SRC/websocket.sh"
 DISTRIBUTION="./websocket.sh"
-HASHBANG='#!/usr/bin/env bash'
+HASHBANG='#!/bin/bash --posix'
 
 wsm_interpret() {
   while IFS="" read -r LINE; do
@@ -25,3 +25,4 @@ wsm_make() {
 }
 
 wsm_make > "$DISTRIBUTION"
+chmod +x "$DISTRIBUTION"
